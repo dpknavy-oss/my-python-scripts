@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "🚀 Starting Obsidian Google Drive Sync..."
+rclone sync ~/Documents/Obsidian "sync obsidian":ObsidianBackup --progress
+echo "✅ Sync Complete!"
+sleep 3
