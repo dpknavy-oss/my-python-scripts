@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Step 1: Force sync/update system package databases
+echo "[+] Syncing repository databases..."
+sudo pacman -Sy
+
+# Step 2: Ask you what application to find
+echo -n "[?] Enter the name of the app to search: "
+read -r app_name
+
+# Step 3: Launch yay's built-in interactive menu
+if [ -n "$app_name" ]; then
+    echo "[+] Searching databases and AUR for '$app_name'..."
+    yay "$app_name"
+else
+    echo "[!] Error: No application name provided."
+fi
